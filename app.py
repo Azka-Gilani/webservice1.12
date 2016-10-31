@@ -97,12 +97,12 @@ def makeWebhookResult(data):
         i+=1
     
     # print(json.dumps(item, indent=4))
-    speech = "This is the response from server."+ row1_title 
+    speech = "This is the response from server."+ row_title[0] 
     print("Response:")
     print(speech)
-    if "unable" in row1_title:
+    if "unable" in row_title[0]:
         message={
-         "text":row1_title
+         "text":row_title[0]
     }
     else:
         message= {
@@ -111,10 +111,10 @@ def makeWebhookResult(data):
              "payload": {
                "template_type": "generic",
                "elements": [{
-               "title": row1_title,
-               "subtitle": row1_location,
-               "item_url": "http://www.aarz.pk/property-detail?id="+row1_id,               
-               "image_url": "http://www.aarz.pk/assets/images/properties/"+row1_id+"/"+row1_id+".actual.1.jpg" ,
+               "title": row_title[0],
+               "subtitle": row_location[0],
+               "item_url": "http://www.aarz.pk/property-detail?id="+row_id[0],               
+               "image_url": "http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.1.jpg" ,
                 "buttons": [{
                 "type": "web_url",
                 "url": "www.aarz.pk",
@@ -123,10 +123,10 @@ def makeWebhookResult(data):
                    ],
           }, 
                    {
-                "title": row2_title,
-                "subtitle": row2_location,
-                "item_url":  "http://www.aarz.pk/property-detail?id="+row2_id,               
-                "image_url": "http://www.aarz.pk/assets/images/properties/"+row2_id+"/"+row2_id+".actual.1.jpg",
+                "title": row_title[1],
+                "subtitle": row_location[1],
+                "item_url":  "http://www.aarz.pk/property-detail?id="+row_id[1],               
+                "image_url": "http://www.aarz.pk/assets/images/properties/"+row_id[1]+"/"+row_id[1]+".actual.1.jpg",
                 "buttons": [{
                 "type": "web_url",
                 "url": "www.aarz.pk",

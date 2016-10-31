@@ -89,6 +89,9 @@ def makeWebhookResult(data):
     i=0
     length=len(data)
     row_id=['test','test1','test2']
+    row_title=['test','test1','test2']
+    row_location=['test','test1','test2']
+    row_price=['test','test1','test2']
     while (i <length):
         row_id[i]=data[i]['p_id']
         row_title[i]=data[i]['title']

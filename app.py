@@ -86,14 +86,15 @@ def processLatestProperties(req):
     return latest
 
 def makeWebhookResult(data):
-    row1_id=data[0]['p_id']
-    row1_title = data[0]['title']
-    row1_location=data[0]['address']
-    row1_price = data[0]['price']
-    row2_id=data[1]['p_id']
-    row2_title = data[1]['title']
-    row2_location=data[1]['address']
-    row2_price = data[1]['price']
+    i=0
+    length=len(data)
+    row_id=['test','test1','test2']
+    while i <length:
+        row_id[i]=data[i]['p_id']
+        row_title[i]=data[i]['title']
+        row_location[i]=data[i]['address']
+        row_price[i]=data[i]['address']
+        i+=1
     
     # print(json.dumps(item, indent=4))
     speech = "This is the response from server."+ row1_title 

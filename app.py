@@ -107,7 +107,7 @@ def makeWebhookResult(data):
         message={
          "text":row_title[0]
     }
-    elif:
+    elif length=1:
         message={
          "attachment":{
           "type":"template",

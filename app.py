@@ -109,21 +109,21 @@ def makeWebhookResult(data):
     }
     elif:
         message={
-    "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"generic",
-        "elements":[
+         "attachment":{
+          "type":"template",
+           "payload":{
+            "template_type":"generic",
+            "elements":[
           {
-            "title":row_title[0],
-            "item_url":"http://www.aarz.pk/property-detail?id="+row_id[0],
-            "image_url":"http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.1.jpg" ,
-            "subtitle":row_location[0],
-            "buttons":[
+             "title":row_title[0],
+             "item_url":"http://www.aarz.pk/property-detail?id="+row_id[0],
+             "image_url":"http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.1.jpg" ,
+             "subtitle":row_location[0],
+             "buttons":[
               {
-                "type":"web_url",
-                "url":"www.aarz.pk",
-                "title":"View Website"
+               "type":"web_url",
+               "url":"www.aarz.pk",
+               "title":"View Website"
               }             
             ]
           }

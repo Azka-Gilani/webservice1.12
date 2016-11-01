@@ -35,6 +35,9 @@ def processRequest(req):
     city_names=processlocation(req)
     sector_names=processSector(req)
     property_type=processPropertyType(req)
+    unit=processUnit(req)
+    area=processArea(req)
+    UnitArea=processUnitArea(area,unit)
     minimum_value=processMinimum(req)
     maximum_value=processMaximum(req)
     latest=processLatestProperties(req)
@@ -84,6 +87,28 @@ def processLatestProperties(req):
     parameters = result.get("parameters")
     latest = parameters.get("LatestProperties")
     return latest
+def processUnit(req):
+    result = req.get("result")
+    parameters = result.get("parameters")
+    unit = parameters.get("Unit")
+    return unit
+
+def processArea(req):
+    result = req.get("result")
+    parameters = result.get("parameters")
+    area = parameters.get("AreaNumber")
+    return area
+
+def processUnitArea(area,unit):
+    if "marla"in unit:
+    	value=round(area*272.251,)
+    if "kanal" in unit:
+        value=round(area*5445,)
+    if "square yard" in unit:
+        value=area*9
+    if "square feet" in unit:
+        value=round(area,)
+    return value
 
 def makeWebhookResult(data):
     i=0
